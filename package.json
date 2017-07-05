@@ -1,0 +1,30 @@
+{
+  "name": "redux-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpmitchellpierson/redux-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpmitchellpierson/redux-todo/issues"
+  },
+  "homepage": "https://github.com/jpmitchellpierson/redux-todo#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "react": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.4.0"
+  }
+}
