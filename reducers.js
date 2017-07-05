@@ -1,15 +1,22 @@
-// import actions to pass to reducers
-import { VisibilityFilters, ADD_TODO, TOGGLE_TODO } from './actions';
-import { combineReducers } from 'redux';
-
+// generates a function that calls your reducers with 
+// the slices of state selected according to their keys
+import { combineReducers } from 'redux'
+import {
+  ADD_TODO,
+  TOGGLE_TODO,
+  SET_VISIBILITY_FILTER,
+  VisibilityFilters
+} from './actions'
 const { SHOW_ALL } = VisibilityFilters
 
-// set initial state of todo app with no filter and blank todos
-const initialState = {
-  visibilityFilter: VisibilityFilters.SHOW_ALL,
-  todos: []
-};
-
+function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
 
 function todos(state = [], action) {
   switch (action.type) {
@@ -35,19 +42,10 @@ function todos(state = [], action) {
   }
 }
 
-function visibilityFilter(state = SHOW_ALL, action) {
-  switch (action.type) {
-    case SET_VISIBILITY_FILTER:
-      return action.filter
-    default:
-      return state
-  }
-}
-
 const todoApp = combineReducers({
   visibilityFilter,
   todos
-})
+});
 // equivalent to below
 
 // function todoApp(state = {}, action) {
